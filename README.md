@@ -127,6 +127,3 @@ Interests:
 - Explainable AI  
 - Clinical Analytics
 - Machine Learning
-
-## License
-MIT License
