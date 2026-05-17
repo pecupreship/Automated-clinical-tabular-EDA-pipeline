@@ -1,4 +1,4 @@
-# Automated Clinical Tabular EDA Pipeline
+# Automated Clinical EDA Pipeline
 Reusable Python pipeline for automated exploratory data analysis (EDA), data quality auditing, feature diagnostics, and machine-learning readiness assessment for clinical tabular datasets.
 
 ## Overview
