@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>EDA Report</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="report-container">
+
+<h1>
+Automated EDA Report
+</h1>
+
+<h2>
+Dataset Summary
+</h2>
+
+<ul>
+
+<li>
+Rows:
+{{ report.quality.rows }}
+</li>
+
+<li>
+Columns:
+{{ report.quality.columns }}
+</li>
+
+<li>
+Duplicates:
+{{ report.quality.duplicates }}
+</li>
+
+<li>
+Detected Target:
+{{ report.target }}
+</li>
+
+<li>
+Numeric Features:
+{{ report.outliers|length }}
+</li>
+
+</ul>
+
+{% if report.missingness %}
+
+<h2>
+Missingness Report
+</h2>
+
+<img
+src="/{{ report.missingness }}"
+>
+
+{% endif %}
+
+{% if report.heatmap %}
+
+<h2>
+Correlation Heatmap
+</h2>
+
+<img
+src="/{{ report.heatmap }}"
+>
+
+{% endif %}
+
+{% if report.pca %}
+
+<h2>
+PCA Visualization
+</h2>
+
+<img
+src="/{{ report.pca }}"
+>
+
+{% endif %}
+
+{% if report.outliers %}
+
+<h2>
+Outlier Detection
+</h2>
+
+<ul>
+
+{% for col, count in report.outliers.items() %}
+
+<li>
+{{ col }} :
+{{ count }} outliers
+</li>
+
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% if report.feature_plot %}
+
+<h2>
+Feature Importance
+</h2>
+
+<img
+src="/{{ report.feature_plot }}"
+>
+
+{% endif %}
+
+{% if report.dashboard %}
+
+<h2>
+Interactive Dashboard
+</h2>
+
+{{ report.dashboard|safe }}
+
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>

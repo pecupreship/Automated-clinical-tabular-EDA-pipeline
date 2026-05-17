@@ -1,0 +1,14 @@
+flask
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+reportlab
+missingno
+openpyxl
+gunicorn
+scipy
+werkzeug
+plotly

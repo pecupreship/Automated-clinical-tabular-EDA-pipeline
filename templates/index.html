@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Automated Clinical Data EDA Pipeline</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+    <h1>
+        Automated Clinical Data EDA Platform
+    </h1>
+
+    <div class="intro">
+
+        
+        <p>
+            This software automatically analyzes Clinical tabular  dataset (CSV/Excel),
+            generates visual insights and machine learning diagnostics,
+            detects patterns, outliers, and missing data,
+            and produces interactive dashboard reports.
+        </p>
+
+        <div class="features-grid">
+
+            <div>
+                Automatic EDA<br>
+                CSV/XLS/XLSX Support<br>
+                Missing Value Analysis<br>
+                Correlation Heatmaps<br>
+                PCA Visualization
+            </div>
+
+            <div>
+                Outlier Detection<br>
+                Feature Importance<br>
+                Interactive Dashboards<br>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+    <!-- UPLOAD FORM -->
+    <form
+        action="/analyze"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <input
+            type="file"
+            name="file"
+            required
+        >
+
+        <button type="submit">
+            Generate Report
+        </button>
+
+    </form>
+
+</div>
+
+</div>
+
+</body>
+</html>
