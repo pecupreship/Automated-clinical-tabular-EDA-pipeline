@@ -1,5 +1,4 @@
 import os
-
 import matplotlib
 matplotlib.use("Agg")
 
@@ -34,6 +33,38 @@ os.makedirs(
     exist_ok=True
 )
 
+def make_plot(df, title=None):
+    size = get_plot_size(df)
+
+    plt.figure(figsize=size, dpi=120)
+
+    if title:
+        plt.title(title)
+
+def get_plot_size(df):
+    n_rows, n_cols = df.shape
+
+    # Base size
+    width = 4
+    height = 2
+
+    # Scale by dataset size
+    if n_rows > 10000:
+        height = 3
+
+    if n_rows > 50000:
+        height = 3.5
+
+    if n_rows > 100000:
+        height = 4
+
+    if n_cols > 20:
+        width = 6
+
+    if n_cols > 50:
+        width = 8
+
+    return (width, height)
 
 def run_eda(filepath):
 
@@ -81,7 +112,7 @@ def run_eda(filepath):
     # -------------------------
     # MISSINGNESS REPORT
     # -------------------------
-    plt.figure(figsize=(6, 3))
+    make_plot(df,"Missingness")
 
     msno.matrix(df)
 
@@ -105,7 +136,7 @@ def run_eda(filepath):
 
         if len(numeric_cols) > 1:
 
-            plt.figure(figsize=(6, 4))
+            make_plot(df,"Correlation Heatmap")
 
             corr = (
                 df[numeric_cols]
@@ -157,7 +188,7 @@ def run_eda(filepath):
                 n_components=2
             ).fit_transform(X_scaled)
 
-            plt.figure(figsize=(8, 6))
+            make_plot(df,"PCA Projection")
 
             plt.scatter(
                 pcs[:, 0],
@@ -269,7 +300,7 @@ def run_eda(filepath):
                 ascending=False
             )
 
-            plt.figure(figsize=(5, 3))
+            make_plot(df,"Feature importance ")
 
             sns.barplot(
                 data=importance_df,
