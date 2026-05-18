@@ -45,8 +45,8 @@ def get_plot_size(df):
     n_rows, n_cols = df.shape
 
     # Base size
-    width = 4
-    height = 2
+    width = 1
+    height = 0.5
 
     # Scale by dataset size
     if n_rows > 10000:
