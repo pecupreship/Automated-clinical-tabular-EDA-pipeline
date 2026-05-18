@@ -81,7 +81,7 @@ def run_eda(filepath):
     # -------------------------
     # MISSINGNESS REPORT
     # -------------------------
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(6, 3))
 
     msno.matrix(df)
 
@@ -105,7 +105,7 @@ def run_eda(filepath):
 
         if len(numeric_cols) > 1:
 
-            plt.figure(figsize=(12, 8))
+            plt.figure(figsize=(6, 4))
 
             corr = (
                 df[numeric_cols]
@@ -269,7 +269,7 @@ def run_eda(filepath):
                 ascending=False
             )
 
-            plt.figure(figsize=(10, 6))
+            plt.figure(figsize=(5, 3))
 
             sns.barplot(
                 data=importance_df,
