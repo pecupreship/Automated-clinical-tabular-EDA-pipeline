@@ -36,7 +36,7 @@ os.makedirs(
 def make_plot(df, title=None):
     size = get_plot_size(df)
 
-    plt.figure(figsize=size, dpi=120)
+    plt.figure(figsize=size, dpi=75)
 
     if title:
         plt.title(title)
