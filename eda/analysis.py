@@ -36,7 +36,7 @@ os.makedirs(
 def make_plot(title=None):
 
     plt.figure(
-        figsize=(1.5, 0.5),
+        figsize=(0.8, 0.1),
         dpi=75
     )
 
