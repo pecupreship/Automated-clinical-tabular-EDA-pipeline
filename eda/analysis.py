@@ -30,7 +30,7 @@ from eda.dashboard import (
 )
 
 os.makedirs(
-    "figures",
+    "static/figures/",
     exist_ok=True
 )
 
@@ -86,7 +86,7 @@ def run_eda(filepath):
     msno.matrix(df)
 
     missing_path = (
-        "figures/missingness.png"
+        "static/figures/missingness.png"
     )
 
     plt.savefig(
@@ -122,7 +122,7 @@ def run_eda(filepath):
             )
 
             heatmap_path = (
-                "figures/correlation.png"
+                "static/figures/correlation.png"
             )
 
             plt.savefig(
@@ -169,7 +169,7 @@ def run_eda(filepath):
             )
 
             pca_path = (
-                "figures/pca.png"
+                "static/figures/pca.png"
             )
 
             plt.savefig(
@@ -282,7 +282,7 @@ def run_eda(filepath):
             )
 
             feature_plot = (
-                "figures/feature_importance.png"
+                "static/figures/feature_importance.png"
             )
 
             plt.savefig(
