@@ -36,8 +36,8 @@ os.makedirs(
 def make_plot(title=None):
 
     plt.figure(
-        figsize=(0.8, 0.1),
-        dpi=75
+        figsize=(3.5, 2),
+        dpi=100
     )
 
     if title:
@@ -278,7 +278,7 @@ def run_eda(filepath):
                 ascending=False
             )
 
-            make_plot("Feature importance ")
+            make_plot("Feature Importance ")
 
             sns.barplot(
                 data=importance_df,

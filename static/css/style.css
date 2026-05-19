@@ -74,3 +74,16 @@ img {
 
     font-weight: 500;
 }
+
+.report-image{
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+
+    display: block;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+}
