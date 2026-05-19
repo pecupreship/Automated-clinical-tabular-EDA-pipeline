@@ -62,7 +62,10 @@ Missingness Report
 </h2>
 
 <img
-    src="{{ ... }}"
+    src="{{ url_for(
+        'static',
+        filename=report.missingness.replace('static/', '')
+    ) }}"
     class="report-image"
 >
 
@@ -75,7 +78,10 @@ Correlation Heatmap
 </h2>
 
 <img
-    src="{{ ... }}"
+    src="{{ url_for(
+        'static',
+        filename=report.heatmap.replace('static/', '')
+    ) }}"
     class="report-image"
 >
 
@@ -88,7 +94,10 @@ PCA Visualization
 </h2>
 
 <img
-    src="{{ ... }}"
+    src="{{ url_for(
+        'static',
+        filename=report.pca.replace('static/', '')
+    ) }}"
     class="report-image"
 >
 
@@ -122,7 +131,10 @@ Feature Importance
 </h2>
 
 <img
-    src="{{ ... }}"
+    src="{{ url_for(
+        'static',
+        filename=report.feature_plot.replace('static/', '')
+    ) }}"
     class="report-image"
 >
 
