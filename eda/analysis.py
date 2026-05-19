@@ -168,10 +168,36 @@ def run_eda(filepath):
 
             make_plot("PCA Projection")
 
-            plt.scatter(
-                pcs[:, 0],
-                pcs[:, 1]
-            )
+            if (
+                TARGET is not None
+                and
+                TARGET in df.columns
+            ):
+
+                y = df.loc[
+                    X.index,
+                    TARGET
+                ]
+
+                plt.scatter(
+                    pcs[:, 0],
+                    pcs[:, 1],
+                    c=pd.factorize(y)[0],
+                    cmap="viridis",
+                    alpha=0.7
+                )
+
+                plt.colorbar(
+                    label=TARGET
+                )
+
+            else:
+
+                plt.scatter(
+                    pcs[:, 0],
+                    pcs[:, 1],
+                    alpha=0.7
+                )
 
             plt.title(
                 "PCA Projection"
